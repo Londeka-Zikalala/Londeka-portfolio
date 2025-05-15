@@ -91,9 +91,9 @@ function setCommonImage(containerId) {
             "img2": `A Hackathon Collaboration utilizing Google AI's Teachable Machine, a Zulu learning app allowing a user to learn Zulu while graded by AI. View
             <a href="https://github.com/Londeka-Zikalala/pixelGiggles-learning-isiZulu" target="_blank">GitHub Repo Link</a> and 
             <a href="https://learning-isizulu.onrender.com" target="_blank"> App on Render</a>.`,
-        
-            "img3": `A Task Management App built with TypeScript and ReactJS. View on
-            <a href="https://github.com/Londeka-Zikalala/task-management-app" target="_blank">GitHub</a>.`
+            
+             "img3": `A lightweight React application, scaffolded with Vite, that provides a user-friendly interface for submitting CV revamp requests. Its Express.js backend leverages NeonDB for data storage and Cloudinary for secure file hosting.
+            <a href="https://cvrefine.netlify.app/" target="_blank">CVRefine</a>.`
         };
         
         return descriptions[projectId] || "No description available.";
