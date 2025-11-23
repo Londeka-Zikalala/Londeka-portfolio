@@ -4,7 +4,9 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>My Portfolio</title>
-	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="styles/style.css">
+	<link rel="stylesheet" href="styles/smallscreens.css">
+	<link rel="stylesheet" href="styles/mediumscreens.css">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link
@@ -15,10 +17,21 @@
 	<link
 		href="https://fonts.googleapis.com/css2?family=Mali:ital,wght@0,200;0,400;0,500;0,600;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
 		rel="stylesheet">
+	<script src="https://cdn.jsdelivr.net/npm/axios@1.4.0/dist/axios.min.js" defer></script>
+	<!-- Swiper Carousel -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+	<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 	<script src="./JS/script.js" defer></script>
 </head>
 
 <body>
+
+	<div class="scroll-indicator">
+		<div class="scroll-bar" data-section="home"></div>
+		<div class="scroll-bar" data-section="about"></div>
+		<div class="scroll-bar" data-section="projects"></div>
+		<div class="scroll-bar" data-section="contact"></div>
+	</div>
 
 	<div class="container">
 		<div class="nav-bar">
@@ -27,7 +40,7 @@
 					<li>
 						<div class="links-container">
 							<img src="./images-and-files/home_FILL0_wght400_GRAD0_opsz24.png" alt="home icon">
-							<a href="index.html">Home</a>
+							<a href="#home">Home</a>
 						</div>
 					</li>
 					<li>
@@ -69,7 +82,7 @@
 
 		</div>
 		
-		<div class="header">
+		<div class="header" id="home">
 			<div class="header-contents">
 				<div class="intro">
 					<div class="header-p">
@@ -79,7 +92,7 @@
 						<span>
 							<h1>I'm Londeka Zikalala,</h1>
 						</span>
-						<h2><span>Junior</span> <span> Full-Stack</span> Web Developer.</h2>
+						<h2><span>Full-Stack</span> Web Developer.</h2>
 						<div class="intro-buttons">
 							<button class="intro-contact-btn">Contact Me</button>
 							<button class="intro-project-btn">View My Work</button>
@@ -103,33 +116,64 @@
 								alt="A photo of Londeka taken at her favorite place" loading="lazy">
 						</div>
 
-						<div class="about-p">
-							<p class="about-text">Hello there! I'm Londeka Zikalala, a junior full-stack web developer with a background in civil engineering.
-								 My passion lies the realms of technology and design.</p>
-							<p class="about-text"><strong>My current tech stack includes:</strong>
-								<ul>
-									<li>JavaScript</li>
-									<li>NodeJS</li>
-									<li>TypeScript</li>
-									<li>SQL</li>
-									<li>HTML5</li>
-									<li>CSS</li>
-									<li>ReactJS</li>
-								</ul>
-								I'm continually seeking fresh challenges to enhance my skills and knowledge. 
-								My aspiration is to evolve into a proficient developer capable of crafting innovative web applications and software solutions that are digitally inclusive,
-								and offer an exceptional user experience.
-								Explore some of my projects on <a target="_blank" href="https://github.com/Londeka-Zikalala"><b>GitHub</b></a>, and download my<a target="_blank" href="/images-and-files/_LK Zikalala CV .pdf" download="_LL Zikalala CV.pdf"><b>CV</b></a> here.
-							</p>
+						<div class="about-carousel-container">
+							<div class="swiper about-swiper">
+								<div class="swiper-wrapper">
+									<div class="swiper-slide">
+										<div class="about-card">
+											<h3>Introduction</h3>
+											<p class="about-text">Hello there! I'm Londeka Zikalala, a full-stack web developer with a background in civil engineering.
+												 My passion lies the realms of technology and design.</p>
+										</div>
+									</div>
+									<div class="swiper-slide">
+										<div class="about-card tech-card">
+											<h3>Tech Stack</h3>
+											<div class="tech-stack-grid">
+												<div class="tech-badge">JavaScript</div>
+												<div class="tech-badge">NodeJS</div>
+												<div class="tech-badge">TypeScript</div>
+												<div class="tech-badge">SQL</div>
+												<div class="tech-badge">HTML5</div>
+												<div class="tech-badge">CSS</div>
+												<div class="tech-badge">ReactJS</div>
+												<div class="tech-badge">Python</div>
+												<div class="tech-badge">Express.js</div>
+												<div class="tech-badge">NestJS</div>
+												<div class="tech-badge">NextJS</div>
+												<div class="tech-badge">Vite</div>
+												<div class="tech-badge">Git</div>
+												<div class="tech-badge">GitHub</div>
+												<div class="tech-badge">PostgreSQL</div>
+												<div class="tech-badge">Figma</div>
+												<div class="tech-badge">Digital Ocean</div>
+												<div class="tech-badge">AWS</div>
+												<div class="tech-badge">Huawei Cloud</div>
+											</div>
+										</div>
+									</div>
+									<div class="swiper-slide">
+										<div class="about-card">
+											<h3>Aspirations</h3>
+											<p class="about-text">
+												I'm continually seeking fresh challenges to enhance my skills and knowledge. 
+												My aspiration is to evolve into a proficient developer capable of crafting innovative web applications and software solutions that are digitally inclusive,
+												and offer an exceptional user experience.
+												Explore some of my projects on <a target="_blank" href="https://github.com/Londeka-Zikalala"><b>GitHub</b></a>, and download my <a target="_blank" href="./images-and-files/_LL Zikalala CV.pdf"><b>CV</b></a> here.
+											</p>
+										</div>
+									</div>
+								</div>
+								<div class="swiper-pagination"></div>
+								<div class="swiper-button-next"></div>
+								<div class="swiper-button-prev"></div>
+							</div>
 						</div>
 
 					</div>
 
 					<div class="about-link">
 						<ul>
-							<li><a href="index.html"><img
-										src="./images-and-files/arrow_upward_FILL0_wght400_GRAD0_opsz24.png"
-										loading="lazy" alt="up arrowhead"></a></li>
 							<li><a href="#projects"><img
 										src="./images-and-files/rocket_launch_FILL0_wght400_GRAD0_opsz24.png"
 										alt="rocket icon"></a></li>
@@ -147,27 +191,57 @@
 					<div class="projects-header">
 						<h1>My Recent Work</h1>
 					</div>
-					<div class="frontend">
-							<div class="projectimg" id="frontend-projects">
-								<div class="project1">
-									<h4>Favorite Movies</h4>
-									<div class="img1"><img width="300">
+					<div class="projects-carousel-container">
+						<div class="container">
+							<div class="carousel">
+								<div class="item a">
+									<div class="project-card-3d">
+										<h4>Favorite Movies</h4>
+										<div class="project-img-container">
+											<img class="project-image" src="./images-and-files/Projects-illustration.jpg" alt="Favorite Movies Project" width="300">
+										</div>
+										<div class="project-description">
+											<p>A ReactJS app with Node and Express backend, fetches movies from TMDB and allows users to store their favorites.</p>
+											<div class="project-links">
+												<a href="https://github.com/Londeka-Zikalala/favorite-movies-webapp" target="_blank">GitHub</a>
+												<a href="https://github.com/Londeka-Zikalala/favorite-movies-react" target="_blank">Live Demo</a>
+											</div>
+										</div>
 									</div>
 								</div>
-								<div class="project2">
-									<h4>ZuluZest</h4>
-									<div class="img2">
-										<img width="300">
+								<div class="item b">
+									<div class="project-card-3d">
+										<h4>ZuluZest</h4>
+										<div class="project-img-container">
+											<img class="project-image" src="./images-and-files/Projects-illustration.jpg" alt="ZuluZest Project" width="300">
+										</div>
+										<div class="project-description">
+											<p>A Hackathon collaboration utilizing Google AI's Teachable Machine, a Zulu learning app allowing users to learn Zulu while graded by AI.</p>
+											<div class="project-links">
+												<a href="https://github.com/Londeka-Zikalala/pixelGiggles-learning-isiZulu" target="_blank">GitHub</a>
+												<a href="https://learning-isizulu.onrender.com" target="_blank">Live Demo</a>
+											</div>
+										</div>
 									</div>
 								</div>
-
-								<div class="project3">
-									<h4>CV Refine</h4>
-									<div class="img3"><img width="300">
-										
+								<div class="item c">
+									<div class="project-card-3d">
+										<h4>CV Refine</h4>
+										<div class="project-img-container">
+											<img class="project-image" src="./images-and-files/Projects-illustration.jpg" alt="CV Refine Project" width="300">
+										</div>
+										<div class="project-description">
+											<p>A lightweight React application scaffolded with Vite, providing a user-friendly interface for submitting CV revamp requests. Express.js backend with NeonDB and Cloudinary.</p>
+											<div class="project-links">
+												<a href="https://cvrefine.netlify.app/" target="_blank">Live Demo</a>
+											</div>
+										</div>
 									</div>
 								</div>
 							</div>
+							<button class="prev"></button>
+							<button class="next"></button>
+						</div>
 					</div>
 
 					<!-- <div class="full-stack">
@@ -197,9 +271,6 @@
 					</div> -->
 					<div class="link">
 						<ul>
-							<li><a href="index.html"><img
-										src="./images-and-files/arrow_upward_FILL0_wght400_GRAD0_opsz24.png"
-										loading="lazy" alt="up arrowhead"></a></li>
 							<li><a href="#contact"><img
 										src="./images-and-files/chat_bubble_FILL0_wght400_GRAD0_opsz24.png"
 										alt="chat bubble icon"></a></li>
@@ -239,23 +310,22 @@
 		</main>
 
 		<footer>
-			<div class="footer">
-				<p>&copy; 2023 Londeka Zikalala. All rights reserved.</p>
+		<div class="footer">
+			<div class="footer-content">
+				<p>&copy; <span id="current-year">2023</span> Londeka Zikalala. All rights reserved.</p>
 				<div class="linkedIn">
 					<a target="_blank"
 						href="https://www.linkedin.com/in/londeka-sendzekile-zikalala-/"><img class="linkedIn-img"
 							src="./images-and-files/kisspng-computer-icons-linkedin-rsum-curriculum-vitae-linkedin-5b4755c26536f7.3711096515314016664146-fotor-202311211894.png"></a>
-					
-
-						<div class="link">
-							<ul>
-							
-							<a href="index.html"><img src="./images-and-files/arrow_upward_FILL0_wght400_GRAD0_opsz24.png" alt="arrow up"></a>
-							</ul>
-					</div>
 				</div>
+			</div>
+			<a href="#home" class="scroll-to-top">
+				<img src="./images-and-files/arrow_upward_FILL0_wght400_GRAD0_opsz24.png" alt="arrow up">
+			</a>
+		</div>
 		</footer>
 
 	</div>
 </body>
 </html>
+

@@ -1,0 +1,401 @@
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+    html {
+        scroll-snap-type: y mandatory;
+        -webkit-overflow-scrolling: touch;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    body {
+        width: 100%;
+        -webkit-overflow-scrolling: touch;
+        margin: 0;
+        padding: 0;
+    }
+
+    section,
+    .header {
+        height: 100vh;
+        min-height: 100vh;
+        margin: 0;
+    }
+
+    .nav-bar {
+        height: 35px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        max-width: 100vw;
+        box-sizing: border-box;
+    }
+
+    .nav-bar ul {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        list-style: none;
+    }
+
+    .links {
+        gap: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    .links li {
+        margin: 0;
+        padding: 0;
+    }
+
+    .links a {
+        font-size: 0.68em;
+        padding: 2px 3px;
+    }
+
+    .links-container {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .links-container img {
+        width: 12px;
+        height: 12px;
+    }
+
+    .header {
+        padding: 40px 3% 10px 3%;
+        margin: 0;
+    }
+
+    .header-contents {
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+
+    .intro {
+        flex-direction: row;
+        width: 95%;
+        padding: 15px;
+        gap: 15px;
+        margin: 0;
+    }
+
+    .header-p {
+        width: 55%;
+        margin: 0;
+        padding: 0;
+    }
+
+    .header-p h1, .header-p h2 {
+        margin: 4px 0;
+    }
+
+    .intro h1, .intro h2 {
+        font-size: 1.4em;
+        margin: 3px 0;
+    }
+
+    .headerImg {
+        width: 40%;
+        max-width: 220px;
+        margin: 0;
+    }
+
+    .headerimg {
+        width: 45%;
+        margin: 0;
+        padding: 0;
+    }
+
+    .intro-buttons {
+        gap: 8px;
+        margin-top: 6px;
+    }
+
+    .intro-buttons button {
+        padding: 8px 16px;
+        font-size: 0.85em;
+        margin: 0;
+    }
+
+    .about {
+        padding: 30px 3% 8px 3%;
+        margin: 0;
+    }
+
+    .about-h1 {
+        font-size: 1.1em;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+    }
+
+    .about-content {
+        gap: 20px;
+        padding: 8px;
+        margin: 0;
+    }
+
+    .aboutImg {
+        width: 45%;
+        margin: 0;
+        padding: 0;
+    }
+
+    .aboutImage {
+        width: 100%;
+        max-width: 220px;
+    }
+
+    .about-carousel-container {
+        width: 50%;
+        padding: 5px;
+        margin: 0;
+    }
+
+    .about-card {
+        padding: 15px;
+        margin: 0;
+    }
+
+    .about-card h3 {
+        font-size: 1.15em;
+        margin-bottom: 8px;
+    }
+
+    .about-text {
+        font-size: 0.82em;
+        margin: 0;
+    }
+
+    .about-link ul,
+    .link ul {
+        gap: 8px;
+        margin: 0;
+        padding: 0;
+    }
+
+    .projects {
+        padding: 20px 3% 5px 3%;
+        margin: 0;
+    }
+
+    .projects-header {
+        margin: 0 0 1px 0;
+        padding: 10px 0 0 0;
+        width: 100%;
+    }
+
+    .projects-header h1 {
+        font-size: 1.1em!important;
+        margin: 0;
+    }
+
+    .projects-carousel-container {
+        padding: 8px;
+        max-height: calc(100vh - 130px);
+        margin: 0;
+    }
+
+    .projects-carousel-container .container {
+        height: 310px;
+        perspective: 750px;
+    }
+
+    .projects-carousel-container .item {
+        width: 210px;
+        height: 250px;
+        margin-left: -105px;
+        margin-top: -125px;
+    }
+
+    .projects-carousel-container .item.a {
+        transform: rotateY(0deg) translateZ(280px);
+    }
+
+    .projects-carousel-container .item.b {
+        transform: rotateY(120deg) translateZ(280px);
+    }
+
+    .projects-carousel-container .item.c {
+        transform: rotateY(240deg) translateZ(280px);
+    }
+
+    .contact {
+        padding: 25px 4% 8px 4%;
+        margin: 0;
+    }
+
+    .contact h1 {
+        font-size: 1.1em;
+        margin-bottom: 10px;
+        padding: 0;
+        width: 100%;
+    }
+
+    .contact-content {
+        flex-direction: row;
+        gap: 15px;
+        margin: 0;
+        padding: 0;
+    }
+
+    .contact-avatar {
+        width: 38%;
+        height: 38vh;
+        margin: 0;
+        padding: 0;
+    }
+
+    .contact-form {
+        width: 58%;
+        height: 42vh;
+        padding: 12px;
+        margin: 0;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        width: 88%;
+        margin-inline: 6%;
+        padding: 8px;
+        font-size: 0.88em;
+    }
+
+    .submit-button {
+        padding: 8px 16px;
+        font-size: 0.88em;
+    }
+
+    footer {
+        height: 55px;
+        width: 100%;
+        max-width: 100vw;
+        box-sizing: border-box;
+    }
+
+    .scroll-to-top {
+        right: 15px;
+        width: 32px;
+        height: 32px;
+    }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+    html {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+    }
+
+    body {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    .header {
+        padding: 50px 3% 12px 3%;
+        margin: 0;
+    }
+
+    .intro {
+        width: 88%;
+        padding: 18px;
+        gap: 20px;
+        margin: 0;
+    }
+
+    .header-p {
+        margin: 0;
+        padding: 0;
+    }
+
+    .intro h1, .intro h2 {
+        font-size: 1.7em;
+        margin: 4px 0;
+    }
+
+    .about {
+        padding: 35px 3% 10px 3%;
+        margin: 0;
+    }
+
+    .about-h1 {
+        margin: 0;
+        width: 100%;
+    }
+
+    .about-content {
+        gap: 35px;
+        padding: 10px;
+        margin: 0;
+    }
+
+    .projects {
+        padding: 25px 3% 8px 3%;
+        margin: 0;
+    }
+
+    .projects-carousel-container {
+        padding: 10px;
+        margin: 0;
+    }
+
+    .projects-carousel-container .container {
+        height: 330px;
+    }
+
+    .projects-carousel-container .item {
+        width: 225px;
+        height: 265px;
+        margin-left: -112.5px;
+        margin-top: -132.5px;
+    }
+
+    .projects-carousel-container .item.a {
+        transform: rotateY(0deg) translateZ(340px);
+    }
+
+    .projects-carousel-container .item.b {
+        transform: rotateY(120deg) translateZ(340px);
+    }
+
+    .projects-carousel-container .item.c {
+        transform: rotateY(240deg) translateZ(340px);
+    }
+
+    .contact {
+        padding: 30px 4% 10px 4%;
+        margin: 0;
+    }
+
+    .contact-form {
+        width: 52%;
+        padding: 15px;
+        margin: 0;
+    }
+}
+
+@media only screen and (min-width: 1025px) {
+    body {
+        width: 100%;
+    }
+
+    .about-h1 {
+        margin: 0;
+    }
+}
+

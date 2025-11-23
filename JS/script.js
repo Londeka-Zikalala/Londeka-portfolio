@@ -4,21 +4,159 @@
 function scrollToSection(sectionId) {
     const section = document.getElementById(sectionId);
     if (section) {
-        section.scrollIntoView({ behavior: 'smooth' });
+        section.scrollIntoView({ 
+            behavior: 'smooth',
+            block: 'start'
+        });
+    }
+}
+
+// Function to scroll to top (home)
+function scrollToHome() {
+    const home = document.getElementById('home');
+    if (home) {
+        home.scrollIntoView({ 
+            behavior: 'smooth',
+            block: 'start'
+        });
+    } else {
+        window.scrollTo({ 
+            top: 0, 
+            behavior: 'smooth' 
+        });
     }
 }
 
 // Event listener for "Contact Me" button
-document.querySelector(".intro-contact-btn").addEventListener("click", () => {
-    scrollToSection("contact");
+document.addEventListener("DOMContentLoaded", function() {
+    // Initialize Swiper for About section carousel
+    const aboutSwiper = new Swiper('.about-swiper', {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        loop: true,
+        autoplay: {
+            delay: 5000,
+            disableOnInteraction: false,
+        },
+        pagination: {
+            el: '.about-swiper .swiper-pagination',
+            clickable: true,
+        },
+        navigation: {
+            nextEl: '.about-swiper .swiper-button-next',
+            prevEl: '.about-swiper .swiper-button-prev',
+        },
+        keyboard: {
+            enabled: true,
+        },
+        effect: 'slide',
+    });
+
+    // Initialize 3D Carousel for Projects section
+    const carousel = document.querySelector(".carousel");
+    let currdeg = 0;
+
+    function rotate(direction) {
+        if (direction === "n") {
+            currdeg = currdeg - 120;
+        }
+        if (direction === "p") {
+            currdeg = currdeg + 120;
+        }
+        carousel.style.transform = "rotateY(" + currdeg + "deg)";
+        carousel.style.webkitTransform = "rotateY(" + currdeg + "deg)";
+        carousel.style.mozTransform = "rotateY(" + currdeg + "deg)";
+        carousel.style.oTransform = "rotateY(" + currdeg + "deg)";
+    }
+
+    const nextBtn = document.querySelector(".next");
+    const prevBtn = document.querySelector(".prev");
+    
+    if (nextBtn) {
+        nextBtn.addEventListener("click", () => rotate("n"));
+    }
+    if (prevBtn) {
+        prevBtn.addEventListener("click", () => rotate("p"));
+    }
+
+    const contactBtn = document.querySelector(".intro-contact-btn");
+    if (contactBtn) {
+        contactBtn.addEventListener("click", () => {
+            scrollToSection("contact");
+        });
+    }
+
+    // Event listener for "View My Work" button
+    const projectBtn = document.querySelector(".intro-project-btn");
+    if (projectBtn) {
+        projectBtn.addEventListener("click", () => {
+            scrollToSection("projects");
+        });
+    }
+    
+    // Set up navigation links for smooth scrolling
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href').substring(1);
+            if (targetId === '' || targetId === 'home') {
+                scrollToHome();
+            } else {
+                scrollToSection(targetId);
+            }
+        });
+    });
+    
+    // Handle index.html links (home)
+    document.querySelectorAll('a[href="index.html"]').forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            scrollToHome();
+        });
+    });
+
+    // Scroll indicator functionality
+    const scrollBars = document.querySelectorAll('.scroll-bar');
+    const sections = ['home', 'about', 'projects', 'contact'];
+
+    function updateActiveSection() {
+        const scrollPosition = window.scrollY + window.innerHeight / 2;
+        
+        sections.forEach((sectionId, index) => {
+            const section = document.getElementById(sectionId);
+            if (section) {
+                const sectionTop = section.offsetTop;
+                const sectionBottom = sectionTop + section.offsetHeight;
+                const scrollBar = scrollBars[index];
+                
+                if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+                    scrollBar.classList.add('active');
+                } else {
+                    scrollBar.classList.remove('active');
+                }
+            }
+        });
+    }
+
+    // Make scroll bars clickable
+    scrollBars.forEach((bar, index) => {
+        bar.addEventListener('click', () => {
+            const sectionId = sections[index];
+            if (sectionId === 'home') {
+                scrollToHome();
+            } else {
+                scrollToSection(sectionId);
+            }
+        });
+    });
+
+    // Update on scroll
+    window.addEventListener('scroll', updateActiveSection);
+    
+    // Initial update
+    updateActiveSection();
 });
 
-// Event listener for "View My Work" button
-document.querySelector(".intro-project-btn").addEventListener("click", () => {
-    scrollToSection("projects");
-});
-
-//JS FOR PROJECTS SECTION
 
 document.addEventListener("DOMContentLoaded", function () {
     const commonImageUrl = "./images-and-files/Projects-illustration.jpg";
@@ -82,7 +220,7 @@ function setCommonImage(containerId) {
 
     // Function to get project description (replace with actual data retrieval logic)
     function getProjectDescription(projectId) {
-        // Sample descriptions
+        // descriptions
         const descriptions = {
             "img1": `A ReactJS app flavored with Node and Express in the backend, fetches some movies from TMDB and allows users to store their favorites. View on 
             <a href="https://github.com/Londeka-Zikalala/favorite-movies-webapp" target="_blank">GitHub</a> and 
@@ -145,3 +283,13 @@ document.addEventListener("DOMContentLoaded", function () {
         submitForm();
     });
 });
+
+// Set current year dynamically in footer
+document.addEventListener("DOMContentLoaded", function() {
+    const yearElement = document.getElementById('current-year');
+    if (yearElement) {
+        yearElement.textContent = new Date().getFullYear();
+    }
+});
+
+
