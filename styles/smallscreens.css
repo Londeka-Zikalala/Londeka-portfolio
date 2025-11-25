@@ -1,7 +1,8 @@
 @media only screen and (max-width: 480px) {
     .scroll-indicator {
-        right: 10px;
+        right: 0;
         gap: 10px;
+        padding-right: 3px;
     }
 
     .scroll-bar {
@@ -254,6 +255,20 @@
         margin-inline: 3%;
         padding: 6px;
         font-size: 0.8em;
+    }
+
+    .form-loader {
+        width: 24px;
+        height: 24px;
+        border-width: 2px;
+        margin: 8px auto 0 auto;
+    }
+
+    .form-message {
+        width: 95%;
+        padding: 10px 12px;
+        font-size: 0.8em;
+        margin: 10px auto 0 auto;
     }
 
     footer {
@@ -790,6 +805,30 @@
         margin: 0;
     }
 
+    .resend-container {
+        width: 100%;
+        height: auto;
+        padding: 15px;
+        border: solid transparent;
+        border-radius: 20px;
+        background-color: rgba(255, 232, 253, 0.338);
+    }
+
+    .resend-content {
+        gap: 15px;
+    }
+
+    .success-message-persistent {
+        width: 95%;
+        padding: 10px 12px;
+        font-size: 0.8em;
+    }
+
+    .resend-button {
+        padding: 10px 20px;
+        font-size: 0.85em;
+    }
+
     .contact-form input,
     .contact-form textarea {
         width: 92%;
@@ -806,6 +845,20 @@
         padding: 8px 16px;
         font-size: 0.85em;
         display: block;
+    }
+
+    .form-loader {
+        width: 24px;
+        height: 24px;
+        border-width: 2px;
+        margin: 8px auto 0 auto;
+    }
+
+    .form-message {
+        width: 95%;
+        padding: 10px 12px;
+        font-size: 0.8em;
+        margin: 10px auto 0 auto;
     }
 
     footer {

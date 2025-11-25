@@ -120,22 +120,30 @@ document.addEventListener("DOMContentLoaded", function() {
     const sections = ['home', 'about', 'projects', 'contact'];
 
     function updateActiveSection() {
-        const scrollPosition = window.scrollY + window.innerHeight / 2;
+        // Remove active from all bars first
+        scrollBars.forEach(bar => bar.classList.remove('active'));
+        
+        let activeIndex = 0;
+        let minDistance = Infinity;
         
         sections.forEach((sectionId, index) => {
             const section = document.getElementById(sectionId);
             if (section) {
-                const sectionTop = section.offsetTop;
-                const sectionBottom = sectionTop + section.offsetHeight;
-                const scrollBar = scrollBars[index];
+                const rect = section.getBoundingClientRect();
+                // With scroll-snap, find section closest to top of viewport
+                const distanceFromTop = Math.abs(rect.top);
                 
-                if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
-                    scrollBar.classList.add('active');
-                } else {
-                    scrollBar.classList.remove('active');
+                if (distanceFromTop < minDistance) {
+                    minDistance = distanceFromTop;
+                    activeIndex = index;
                 }
             }
         });
+        
+        // Update active class
+        if (scrollBars[activeIndex]) {
+            scrollBars[activeIndex].classList.add('active');
+        }
     }
 
     // Make scroll bars clickable
@@ -151,10 +159,21 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     // Update on scroll
-    window.addEventListener('scroll', updateActiveSection);
+    function onScroll() {
+        updateActiveSection();
+    }
+
+    // Use multiple event listeners for better detection
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('scrollend', updateActiveSection, { passive: true });
     
     // Initial update
-    updateActiveSection();
+    setTimeout(() => {
+        updateActiveSection();
+    }, 100);
+    
+    // Update periodically to catch scroll-snap changes
+    setInterval(updateActiveSection, 200);
 });
 
 
@@ -174,7 +193,7 @@ function setCommonImage(containerId) {
 }
 
     // Function to handle project click and display floating description
-    function handleProjectClick(projectId, description) {
+    function handleProjectClick(description) {
         // Create a floating element
         const floatingDescription = document.createElement("div");
         floatingDescription.classList.add("floating-description");
@@ -246,12 +265,93 @@ function setCommonImage(containerId) {
 
 //JS FOR THE FORM SUBMISSION
 document.addEventListener("DOMContentLoaded", function () {
+    const loader = document.getElementById('form-loader');
+    const submitButton = document.querySelector('.submit-button');
+    const formMessage = document.getElementById('form-message');
+    const form = document.querySelector('.contact-form form');
+    const contactForm = document.getElementById('contact-form');
+    const resendContainer = document.getElementById('resend-container');
+    const resendButton = document.getElementById('resend-button');
+    const successMessagePersistent = document.getElementById('success-message-persistent');
+    
+    // Function to show validation message
+    function showMessage(text, type) {
+        if (formMessage) {
+            formMessage.textContent = text;
+            formMessage.className = 'form-message active ' + type;
+            
+            // Auto-hide after 3 seconds (only for errors)
+            if (type === 'error') {
+                setTimeout(() => {
+                    formMessage.classList.remove('active');
+                }, 3000);
+            }
+        }
+    }
+    
+    // Function to show persistent success message in resend container
+    function showSuccessMessagePersistent(text) {
+        if (successMessagePersistent) {
+            successMessagePersistent.textContent = text;
+            successMessagePersistent.className = 'form-message success-message-persistent success';
+        }
+    }
+    
+    // Function to hide form and show resend button
+    function hideFormAndShowResend() {
+        if (contactForm) {
+            contactForm.classList.add('hidden');
+        }
+        if (resendContainer) {
+            resendContainer.style.display = 'flex';
+        }
+    }
+    
+    // Function to show form and hide resend button
+    function showFormAndHideResend() {
+        if (contactForm) {
+            contactForm.classList.remove('hidden');
+        }
+        if (resendContainer) {
+            resendContainer.style.display = 'none';
+        }
+        // Hide any messages
+        if (formMessage) {
+            formMessage.classList.remove('active');
+        }
+        if (successMessagePersistent) {
+            successMessagePersistent.textContent = '';
+            successMessagePersistent.className = 'form-message success-message-persistent';
+        }
+    }
+    
+    // Event listener for resend button
+    if (resendButton) {
+        resendButton.addEventListener('click', function() {
+            showFormAndHideResend();
+        });
+    }
+    
     //function to submit the form to the database
     function submitForm() {
         const name = document.getElementById('name').value;
         const email = document.getElementById('email').value;
         const message = document.getElementById('message').value;
         
+        // Hide any previous messages
+        if (formMessage) {
+            formMessage.classList.remove('active');
+        }
+        
+        // Show loader and disable button
+        if (loader) {
+            loader.classList.add('active');
+        }
+        if (submitButton) {
+            submitButton.disabled = true;
+            submitButton.style.opacity = '0.6';
+            submitButton.style.cursor = 'not-allowed';
+        }
     
         const formData = {
             name: name,
@@ -269,19 +369,46 @@ document.addEventListener("DOMContentLoaded", function () {
             .then((response) => response.json())
             .then((data) => {
                 console.log(data);
-                alert(data.message);
+                
+                // Check server response status
+                if (data.status === 'success') {
+                    // Clear form on success
+                    if (form) {
+                        form.reset();
+                    }
+                    // Hide form and show resend button with persistent success message
+                    hideFormAndShowResend();
+                    showSuccessMessagePersistent('Thanks for contacting me, Will get back to you soon! (:');
+                } else {
+                    // Show server error message and keep form visible
+                    showMessage(data.message || 'Something went wrong. Please try again.', 'error');
+                }
             })
             .catch((error) => {
                 console.error('Error:', error);
-                alert('Oops! Something went wrong. Please try again later.');
+                // Show error message and keep form visible
+                showMessage('Oops! Something went wrong. Please try again later.', 'error');
+            })
+            .finally(() => {
+                // Hide loader and re-enable button
+                if (loader) {
+                    loader.classList.remove('active');
+                }
+                if (submitButton) {
+                    submitButton.disabled = false;
+                    submitButton.style.opacity = '1';
+                    submitButton.style.cursor = 'pointer';
+                }
             });
     }
     //event listener for the submit button
     const submit = document.querySelector('.submit-button')
-    submit.addEventListener('click', function(event) {
-        event.preventDefault(); 
-        submitForm();
-    });
+    if (submit) {
+        submit.addEventListener('click', function(event) {
+            event.preventDefault(); 
+            submitForm();
+        });
+    }
 });
 
 // Set current year dynamically in footer

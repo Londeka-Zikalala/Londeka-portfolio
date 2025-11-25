@@ -285,7 +285,7 @@
 						<div class="contact-avatar">
 							<img src="./images-and-files/matrix avatar.png" alt="avatar cubic">
 						</div>
-						<div class="contact-form">
+						<div class="contact-form" id="contact-form">
 							<form>
 								<div class="name">
 									<label for="name">Name:</label>
@@ -301,8 +301,16 @@
 								</div>
 								<div class="submit">
 									<button class="submit-button">Send Me A Message!</button>
+									<div class="form-loader" id="form-loader"></div>
+									<div class="form-message" id="form-message"></div>
 								</div>
 							</form>
+						</div>
+						<div class="resend-container" id="resend-container" style="display: none;">
+							<div class="resend-content">
+								<div class="form-message success-message-persistent" id="success-message-persistent"></div>
+								<button class="resend-button" id="resend-button">Send Another Message</button>
+							</div>
 						</div>
 					</div>
 				</div>
