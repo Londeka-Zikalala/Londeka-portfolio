@@ -1,4 +1,8 @@
 @media only screen and (min-width: 481px) and (max-width: 768px) {
+    h1 {
+        margin: 0;
+    }
+
     html {
         scroll-snap-type: y mandatory;
         -webkit-overflow-scrolling: touch;
@@ -163,6 +167,17 @@
         width: 50%;
         padding: 5px;
         margin: 0;
+    }
+
+    .about-swiper {
+        position: relative;
+        padding-bottom: 50px;
+    }
+
+    .about-swiper .swiper-pagination {
+        position: absolute;
+        bottom: -40px;
+        width: 100%;
     }
 
     .about-card {
@@ -332,6 +347,10 @@
 }
 
 @media only screen and (min-width: 769px) and (max-width: 1024px) {
+    h1 {
+        margin: 0;
+    }
+
     html {
         margin: 0;
         padding: 0;
@@ -382,6 +401,17 @@
         margin: 0;
     }
 
+    .about-swiper {
+        position: relative;
+        padding-bottom: 50px;
+    }
+
+    .about-swiper .swiper-pagination {
+        position: absolute;
+        bottom: -40px;
+        width: 100%;
+    }
+
     .projects {
         padding: 25px 3% 8px 3%;
         margin: 0;
@@ -428,12 +458,27 @@
 }
 
 @media only screen and (min-width: 1025px) {
+    h1 {
+        margin: 0;
+    }
+
     body {
         width: 100%;
     }
 
     .about-h1 {
         margin: 0;
+    }
+
+    .about-swiper {
+        position: relative;
+        padding-bottom: 50px;
+    }
+
+    .about-swiper .swiper-pagination {
+        position: absolute;
+        bottom: -40px;
+        width: 100%;
     }
 }
 

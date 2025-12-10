@@ -1,296 +1,8 @@
 @media only screen and (max-width: 480px) {
-    .scroll-indicator {
-        right: 0;
-        gap: 10px;
-        padding-right: 3px;
-    }
-
-    .scroll-bar {
-        width: 3px;
-        height: 30px;
-    }
-
-    .scroll-bar.active {
-        width: 4px;
-        height: 35px;
-    }
-
-    html,body {
-        font-size: 85%;
-        margin: 0;
-        padding: 0;
-        width: 100%;
-        overflow-x: hidden;
-    }
-
-    .header {
-        padding: 30px 0 0 0;
-        height: 100vh;
-        min-height: 100vh;
+    h1 {
         margin: 0;
     }
 
-    .header-contents {
-        padding: 0;
-        margin: 0;
-    }
-
-    .intro {
-        padding: 0 6px;
-        margin: 0;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 6px;
-        height: calc(100vh - 80px);
-        min-height: calc(100vh - 80px);
-    }
-
-    .headerimg {
-        display: flex;
-        justify-content: center;
-        order: 1;
-    }
-
-    .headerImg {
-        width: 55%;
-        max-width: 180px;
-    }
-
-    .header-p {
-        gap: 0;
-        margin: 0;
-        padding: 0;
-        line-height: 1.3;
-        order: 2;
-    }
-
-    .header-p::before {
-        display: none;
-    }
-
-    .header-p h1 {
-        font-size: 0.85em;
-        margin: 0;
-        padding: 0;
-        line-height: 1.3;
-    }
-
-    .header-p h2 {
-        font-size: 0.85em;
-        line-height: 1.3;
-    }
-
-    .header-p > span {
-        margin: 0;
-        padding: 0;
-    }
-
-    .intro-buttons {
-        gap: 4px;
-        margin: 0;
-        padding: 0;
-        order: 3;
-    }
-
-    .intro-buttons button {
-        width: auto;
-        padding: 3px 7px;
-        font-size: 0.6em;
-        margin: 0;
-    }
-
-    .about {
-        padding: 5px 2% 5px 2%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .about-h1 {
-        font-size: 1.1em !important;
-        margin: 0;
-        text-align: center;
-        width: 100%;
-    }
-
-    .about-content {
-        gap: 10px;
-        padding: 3px;
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .aboutImage {
-        max-width: 150px;
-    }
-
-    .about-carousel-container {
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        min-height: 280px;
-        height: auto;
-        visibility: visible;
-    }
-
-    .about-swiper {
-        width: 100%;
-        height: 280px;
-        min-height: 280px;
-        max-height: 320px;
-        padding-bottom: 40px;
-        display: block;
-        visibility: visible;
-    }
-
-    .about-card {
-        padding: 12px 45px;
-        height: auto;
-        min-height: 260px;
-        max-height: 300px;
-        display: flex;
-        visibility: visible;
-        overflow-y: auto;
-        box-sizing: border-box;
-        scrollbar-width: thin;
-        scrollbar-color: #FF99C8 transparent;
-    }
-
-    .about-card::-webkit-scrollbar {
-        width: 4px;
-    }
-
-    .about-card::-webkit-scrollbar-track {
-        background: transparent;
-        border-radius: 10px;
-    }
-
-    .about-card::-webkit-scrollbar-thumb {
-        background: linear-gradient(135deg, #FF99C8 0%, #ec4899 100%);
-        border-radius: 10px;
-    }
-
-    .about-card::-webkit-scrollbar-thumb:hover {
-        background: linear-gradient(135deg, #ec4899 0%, #db2777 100%);
-    }
-
-    .tech-stack-grid {
-        grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
-        gap: 6px;
-        margin-top: 10px;
-        padding: 5px;
-    }
-
-    .tech-badge {
-        padding: 6px 10px;
-        font-size: 0.7em;
-        border-radius: 18px;
-    }
-
-    .projects {
-        padding: 12px 2% 5px 2%;
-    }
-
-    .projects h1 {
-        font-size: 1.6em;
-    }
-
-    .projects-header {
-        margin: 0 0 15px 0;
-    }
-
-    .projects-carousel-container {
-        padding: 3px;
-        margin-top: 15px;
-    }
-
-    .projects-carousel-container .container {
-        height: 330px;
-        perspective: 500px;
-    }
-
-    .projects-carousel-container .item {
-        width: 180px;
-        height: 280px;
-        margin-left: -90px;
-        margin-top: -140px;
-    }
-
-    .projects-carousel-container .item.a {
-        transform: rotateY(0deg) translateZ(200px);
-    }
-
-    .projects-carousel-container .item.b {
-        transform: rotateY(120deg) translateZ(200px);
-    }
-
-    .projects-carousel-container .item.c {
-        transform: rotateY(240deg) translateZ(200px);
-    }
-
-    .contact {
-        padding: 18px 2% 5px 2%;
-    }
-
-    .contact h1 {
-        font-size: 1.2em;
-        margin-bottom: 6px;
-        width: 100%;
-    }
-
-    .contact-form {
-        padding: 10px;
-    }
-
-    .contact-form input,
-    .contact-form textarea {
-        width: 94%;
-        margin-inline: 3%;
-        padding: 6px;
-        font-size: 0.8em;
-    }
-
-    .form-loader {
-        width: 24px;
-        height: 24px;
-        border-width: 2px;
-        margin: 8px auto 0 auto;
-    }
-
-    .form-message {
-        width: 95%;
-        padding: 10px 12px;
-        font-size: 0.8em;
-        margin: 10px auto 0 auto;
-    }
-
-    footer {
-        height: 48px;
-        width: 100%;
-        max-width: 100vw;
-        box-sizing: border-box;
-    }
-
-    .scroll-to-top {
-        right: 5px;
-        width: 26px;
-        height: 26px;
-    }
-
-    .scroll-to-top img {
-        width: 12px;
-        height: 12px;
-    }
-}
-
-@media only screen and (max-width: 768px) {
     html {
         scroll-snap-type: y mandatory;
         -webkit-overflow-scrolling: touch;
@@ -510,16 +222,18 @@
 
     .about-content {
         flex-direction: column;
-        gap: 12px;
-        padding: 5px;
+        gap: 0px;
+        flex: none;
+        padding-top: 0px;
         margin: 0;
-        width: 100%;
+        width: 90%;
         display: flex;
         align-items: center;
         justify-content: center;
     }
 
     .aboutImg {
+        flex-shrink: 1;
         width: 100%;
         display: flex;
         justify-content: center;
@@ -530,35 +244,46 @@
     .aboutImage {
         width: 55%;
         max-width: 180px;
+        margin-bottom: 0;
+        margin-top: 0;
     }
 
     .about-carousel-container {
+        flex: none;
         width: 100%;
-        padding: 5px;
+        padding: 0px;
         margin: 0;
         display: flex;
         align-items: center;
         justify-content: center;
-        min-height: 300px;
+        min-height: auto;
         height: auto;
         visibility: visible;
     }
 
     .about-swiper {
-        padding-bottom: 40px;
+        padding-bottom: 10px;
         width: 100%;
-        height: 300px;
-        min-height: 300px;
-        max-height: 350px;
+        height: auto;
+        min-height: 280px;
+        max-height: 320px;
         display: block;
         visibility: visible;
+        position: relative;
+        padding-bottom: 50px;
+    }
+
+    .about-swiper .swiper-pagination {
+        position: absolute;
+        bottom: -40px;
+        width: 100%;
     }
 
     .about-card {
-        padding: 12px 45px;
+        padding: 8px 45px;
         margin: 0;
         height: auto;
-        min-height: 280px;
+        min-height: 250px;
         max-height: 330px;
         display: flex;
         visibility: visible;
