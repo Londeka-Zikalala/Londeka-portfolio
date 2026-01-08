@@ -1,0 +1,288 @@
+footer {
+  position: relative;
+  width: 100%;
+  background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 50%, #6d28d9 100%);
+  background-size: 200% 200%;
+  animation: gradientShift 14s ease infinite;
+  padding: 80px 40px 60px 40px;
+  margin: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+  scroll-snap-align: start;
+  min-height: auto;
+}
+
+footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 200px;
+  background: linear-gradient(to bottom, 
+    rgba(168, 85, 247, 0.35) 0%,
+    rgba(168, 85, 247, 0.2) 15%,
+    rgba(139, 92, 246, 0.08) 40%,
+    rgba(139, 92, 246, 0) 70%,
+    rgba(139, 92, 246, 0) 100%
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.footer-curve {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 40px;
+  background: #fffff8;
+  border-radius: 0 0 50% 50% / 0 0 100% 100%;
+  transform: translateY(-20px);
+}
+
+.footer-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+  position: relative;
+  z-index: 2;
+}
+
+.footer-main {
+  text-align: center;
+}
+
+.footer-question {
+  font-size: 1.2em;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0 0 15px 0;
+  font-weight: 300;
+}
+
+.footer-cta {
+  font-size: 4em;
+  color: #333;
+  margin: 0;
+  font-weight: 900;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.footer-cta:hover {
+  color: #FF99C8;
+}
+
+.footer-contact-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1000px;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.footer-email {
+  flex: 1;
+  min-width: 200px;
+}
+
+.email-link {
+  font-size: 1.5em;
+  font-weight: 700;
+  color: #333;
+  text-decoration: none;
+  border-bottom: 2px solid #333;
+  padding-bottom: 5px;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.email-link:hover {
+  color: #FF99C8;
+  border-bottom-color: #FF99C8;
+}
+
+.footer-quote-btn {
+  padding: 15px 40px;
+  font-size: 1.1em;
+  font-weight: 600;
+  color: #333;
+  background: transparent;
+  border: 2px solid #333;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: 'Mali', cursive;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.footer-quote-btn:hover {
+  background-color: #FF99C8;
+  border-color: #FF99C8;
+  color: #ffffff;
+}
+
+.footer-phone {
+  flex: 1;
+  min-width: 200px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.phone-icon {
+  width: 50px;
+  height: 50px;
+  border: 2px solid #333;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5em;
+  flex-shrink: 0;
+  background: #fffff8;
+}
+
+.phone-info {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.phone-number {
+  font-size: 1.3em;
+  font-weight: 700;
+  color: #333;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.phone-number:hover {
+  color: #FF99C8;
+}
+
+.phone-location {
+  font-size: 0.9em;
+  color: rgba(51, 51, 51, 0.7);
+  margin: 0;
+}
+
+.footer-social {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.social-icon {
+  width: 50px;
+  height: 50px;
+  border: 2px solid #333;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  background: #fffff8;
+}
+
+.social-icon:hover {
+  background-color: #FF99C8;
+  border-color: #FF99C8;
+}
+
+.social-icon-img {
+  width: 24px;
+  height: 24px;
+  filter: none;
+  transition: filter 0.3s ease;
+}
+
+.social-icon:hover .social-icon-img {
+  filter: brightness(0) invert(1);
+}
+
+@media (max-width: 768px) {
+  footer {
+    padding: 60px 20px 40px 20px;
+  }
+
+  .footer-container {
+    gap: 30px;
+  }
+
+  .footer-question {
+    font-size: 1em;
+  }
+
+  .footer-cta {
+    font-size: 2.5em;
+  }
+
+  .footer-contact-row {
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    text-align: center;
+  }
+
+  .footer-email,
+  .footer-phone {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .email-link {
+    font-size: 1.2em;
+  }
+
+  .footer-quote-btn {
+    padding: 12px 30px;
+    font-size: 1em;
+  }
+
+  .phone-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2em;
+  }
+
+  .phone-number {
+    font-size: 1.1em;
+  }
+
+  .phone-location {
+    font-size: 0.8em;
+  }
+
+  .social-icon {
+    width: 45px;
+    height: 45px;
+  }
+
+  .social-icon-img {
+    width: 20px;
+    height: 20px;
+  }
+}
+

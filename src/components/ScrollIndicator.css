@@ -1,0 +1,52 @@
+.scroll-indicator {
+  position: fixed;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+  padding-right: 5px;
+}
+
+.scroll-bar {
+  width: 4px;
+  height: 40px;
+  background: rgba(255, 153, 200, 0.3);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.scroll-bar.active {
+  background: #ffffff;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+  animation: scrollBarPulse 2s ease-in-out infinite;
+  height: 50px;
+  width: 6px;
+}
+
+@keyframes scrollBarPulse {
+  0%, 100% {
+    opacity: 1;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+  }
+  50% {
+    opacity: 0.8;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 1);
+  }
+}
+
+.scroll-bar:hover {
+  background: rgba(255, 153, 200, 0.5);
+  width: 5px;
+}
+
+@media (max-width: 768px) {
+  .scroll-indicator {
+    display: none;
+  }
+}
+
