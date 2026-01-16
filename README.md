@@ -84,18 +84,6 @@ src/
 - Text: `#333` (dark gray)
 - Gradients: Purple/pink gradients throughout
 
-## Images
-
-All images are stored in the `images-and-files/` directory. The portfolio uses:
-- Original Avatar.png
-- b&w avatar.png
-- matrix avatar.png
-- Various icon images
-
-## Contact Form
-
-The contact form submits to: `https://portfolio-server-yhj6.onrender.com/contact`
-
 ## License
 
 © 2024 Londeka Zikalala. All rights reserved.
