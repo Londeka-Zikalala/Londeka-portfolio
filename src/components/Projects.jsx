@@ -53,16 +53,18 @@ const Projects = () => {
   }
 
   return (
-    <section id="projects" className="projects">
-      <motion.div 
-        className="projects-header"
-        initial={{ opacity: 0, y: -20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5 }}
-      >
-        <h1>My Recent Work</h1>
-      </motion.div>
+    <div className="parallax-background">
+      <section id="projects" className="projects">
+        <div className="parallax-content-wrapper">
+          <motion.div 
+            className="projects-header"
+            initial={{ opacity: 0, y: -20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            <h1>My Recent Work</h1>
+          </motion.div>
       <motion.div 
         className="projects-grid"
         variants={containerVariants}
@@ -139,7 +141,9 @@ const Projects = () => {
           </li>
         </ul>
       </div>
-    </section>
+        </div>
+      </section>
+    </div>
   )
 }
 

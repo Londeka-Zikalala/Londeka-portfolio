@@ -1,6 +1,6 @@
-.contact {
+.parallax-background .contact {
   width: 100%;
-  min-height: 100vh;
+  min-height: 100%;
   margin: 0;
   padding: 15px 5% 5px 5%;
   display: flex;
@@ -15,6 +15,7 @@
   scroll-snap-align: start;
   scroll-snap-stop: always;
   scroll-margin-top: 60px;
+  height: 100%;
 }
 
 .contact::before {

@@ -6,6 +6,7 @@ import Projects from './components/Projects'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 import ScrollIndicator from './components/ScrollIndicator'
+import ParallaxContainer from './components/ParallaxContainer'
 import './App.css'
 
 function App() {
@@ -40,10 +41,12 @@ function App() {
     <div className="app">
       <Navigation activeSection={activeSection} scrollToSection={scrollToSection} />
       <ScrollIndicator activeSection={activeSection} scrollToSection={scrollToSection} />
-      <Header scrollToSection={scrollToSection} />
-      <About />
-      <Projects />
-      <Contact />
+      <ParallaxContainer>
+        <Header scrollToSection={scrollToSection} />
+        <About scrollToSection={scrollToSection} />
+        <Projects />
+        <Contact />
+      </ParallaxContainer>
       <Footer scrollToSection={scrollToSection} />
     </div>
   )

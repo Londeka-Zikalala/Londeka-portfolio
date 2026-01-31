@@ -1,4 +1,4 @@
-.header {
+.parallax-background .header {
   width: 100%;
   border: solid transparent;
   margin: 0;
@@ -8,9 +8,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
-  min-height: 100vh;
-  max-height: 100vh;
+  height: 100%;
+  min-height: 100%;
+  max-height: 100%;
   position: relative;
   z-index: 1;
   visibility: visible;
@@ -235,14 +235,18 @@
   position: relative;
 }
 
+.typing-text {
+  display: inline;
+}
+
 .text-box-content h1 .cursor {
   display: inline-block;
   width: 3px;
   height: 1.2em;
   background-color: #333;
   margin-left: 3px;
-  animation: blink 1s infinite;
   vertical-align: baseline;
+  animation: blink 1s infinite;
 }
 
 @keyframes blink {
@@ -260,6 +264,41 @@
   line-height: 1.8;
   margin: 0;
   font-weight: 400;
+  min-height: 3.6em; /* Prevent layout shift during typing */
+  position: relative;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.typing-paragraph {
+  white-space: pre-wrap;
+}
+
+/* Book-style margin lines */
+.intro-text::before,
+.intro-text::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background-color: #db2777;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.intro-text::before {
+  left: 0;
+}
+
+.intro-text::after {
+  right: 0;
+}
+
+/* Show margin lines when first line is typed */
+.intro-text.show-margin-lines::before,
+.intro-text.show-margin-lines::after {
+  opacity: 0.6;
 }
 
 @media (max-width: 768px) {

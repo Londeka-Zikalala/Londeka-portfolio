@@ -53,16 +53,18 @@ const Contact = () => {
   }
 
   return (
-    <section id="contact" className="contact">
-      <motion.h1
-        initial={{ opacity: 0, y: -20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5 }}
-      >
-        Tell me about a project you'd like me to help you with!
-      </motion.h1>
-      <div className="contact-content">
+    <div className="parallax-background">
+      <section id="contact" className="contact">
+        <div className="parallax-content-wrapper">
+          <motion.h1
+            initial={{ opacity: 0, y: -20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            Tell me about a project you'd like me to help you with!
+          </motion.h1>
+          <div className="contact-content">
         <motion.div 
           className="contact-avatar"
           initial={{ opacity: 0, x: -50 }}
@@ -160,7 +162,9 @@ const Contact = () => {
           </motion.div>
         )}
       </div>
-    </section>
+        </div>
+      </section>
+    </div>
   )
 }
 
