@@ -64,13 +64,13 @@ const Footer = ({ scrollToSection }) => {
             >
               {social.name === 'LinkedIn' ? (
                 <img 
-                  src="/images-and-files/kisspng-computer-icons-linkedin-rsum-curriculum-vitae-linkedin-5b4755c26536f7.3711096515314016664146-fotor-202311211894.png"
+                  src="/kisspng-computer-icons-linkedin-rsum-curriculum-vitae-linkedin-5b4755c26536f7.3711096515314016664146-fotor-202311211894.png"
                   alt="LinkedIn"
                   className="social-icon-img"
                 />
               ) : (
                 <img 
-                  src="/images-and-files/kisspng-computer-icons-logo-portable-network-graphics-clip-icons-for-free-iconza-circle-social-5b7fe46b0bac53.1999041115351082030478-fotor-2023112118730.jpg"
+                  src="/kisspng-computer-icons-logo-portable-network-graphics-clip-icons-for-free-iconza-circle-social-5b7fe46b0bac53.1999041115351082030478-fotor-2023112118730.jpg"
                   alt="GitHub"
                   className="social-icon-img"
                 />

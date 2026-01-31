@@ -134,7 +134,7 @@ const Projects = () => {
           <li>
             <a href="#contact">
               <img
-                src="/images-and-files/chat_bubble_FILL0_wght400_GRAD0_opsz24.png"
+                src="/chat_bubble_FILL0_wght400_GRAD0_opsz24.png"
                 alt="chat bubble icon"
               />
             </a>

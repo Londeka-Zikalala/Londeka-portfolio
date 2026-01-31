@@ -188,7 +188,7 @@ const About = ({ scrollToSection }) => {
               <div className="about-static-image-wrapper">
                 <img 
                   className="about-static-image" 
-                  src="/images-and-files/b&w avatar.png"
+                  src="/b&w avatar.png"
                   alt="A photo of Londeka taken at her favorite place" 
                   loading="lazy"
                 />
@@ -250,7 +250,7 @@ const About = ({ scrollToSection }) => {
               <li>
                 <a href="#projects">
                   <img
-                    src="/images-and-files/rocket_launch_FILL0_wght400_GRAD0_opsz24.png"
+                    src="/rocket_launch_FILL0_wght400_GRAD0_opsz24.png"
                     alt="rocket icon"
                   />
                 </a>
@@ -258,7 +258,7 @@ const About = ({ scrollToSection }) => {
               <li>
                 <a href="#contact">
                   <img
-                    src="/images-and-files/chat_bubble_FILL0_wght400_GRAD0_opsz24.png"
+                    src="/chat_bubble_FILL0_wght400_GRAD0_opsz24.png"
                     alt="chat bubble icon"
                   />
                 </a>

@@ -73,7 +73,7 @@ const Contact = () => {
           transition={{ duration: 0.6 }}
           whileHover={{ scale: 1.05, rotate: 5 }}
         >
-          <img src="/images-and-files/matrix avatar.png" alt="avatar cubic" />
+          <img src="/matrix avatar.png" alt="avatar cubic" />
         </motion.div>
         {!showResend ? (
           <motion.div 

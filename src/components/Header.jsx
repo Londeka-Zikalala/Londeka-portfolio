@@ -157,7 +157,7 @@ const Header = ({ scrollToSection }) => {
               >
                 <img 
                   className="headerImg" 
-                  src="/images-and-files/Original Avatar.png"
+                  src="/Original Avatar.png"
                   alt="A headshot of Londeka Zikalala"
                 />
               </motion.div>
